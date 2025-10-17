@@ -1,0 +1,18 @@
+<!doctype html><html lang="ko"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STELLA MEDIA LAB · Melody Lab (Demo)</title>
+<style>body{font:16px/1.6 system-ui;margin:40px;max-width:720px}button{padding:10px 14px;border:0;border-radius:10px;background:#111;color:#fff}</style>
+<h1>Melody Lab (Demo)</h1>
+<p>장르/무드/템포를 적고 <b>생성</b>을 누르면 데모 오디오가 재생됩니다. (지금은 더미 파일)</p>
+<input id="p" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:10px" placeholder="예: 잔잔한 피아노 90bpm 따뜻한 무드">
+<div style="margin-top:12px"><button onclick="play()">생성</button></div>
+<audio id="a" controls style="margin-top:16px;width:100%"></audio>
+<script>
+  function play(){
+    // 추후: 여기서 실제 음악 생성 API를 호출
+    document.getElementById('a').src =
+      'https://files.freemusicarchive.org/storage-freemusicarchive-org/tracks/AWOL.mp3';
+    document.getElementById('a').play();
+  }
+</script>
+</html>
