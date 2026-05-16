@@ -36,8 +36,22 @@
 
     .hero {
       background: linear-gradient(155deg, #eff6ff 0%, #ffffff 55%, #eef2ff 100%);
-      padding: 26px 20px 18px;
+      padding: 20px 20px 18px;
       border-bottom: 1px solid var(--line);
+    }
+
+    .hero-visual {
+      margin: 0 0 14px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(17, 24, 39, 0.18);
+    }
+
+    .hero-visual img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
     }
 
     .badge {
@@ -244,6 +258,10 @@
 <body>
   <main class="mobile-page">
     <section class="hero">
+      <figure class="hero-visual">
+        <img id="heroImage" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80" alt="여성 모델이 여름 데님을 착용한 메인 비주얼" />
+      </figure>
+
       <span class="badge">SUMMER DENIM COLLECTION</span>
       <h1>쿨링 와이드 데님 팬츠</h1>
       <p class="sub">가볍고 시원한 썸머 원단으로 한여름에도 쾌적하게.</p>
@@ -327,5 +345,11 @@
       <button class="btn btn-buy">구매하기</button>
     </div>
   </main>
+
+  <script>
+    // 메인 비주얼 이미지를 쉽게 교체할 수 있는 변수
+    const heroImage = "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80";
+    document.getElementById("heroImage").src = heroImage;
+  </script>
 </body>
 </html>
