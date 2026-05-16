@@ -6,14 +6,15 @@
   <title>여름 여성 청바지 상세페이지</title>
   <style>
     :root {
-      --bg: #f5f7fa;
+      --bg: #eef2f7;
       --card: #ffffff;
-      --text: #1f2937;
+      --text: #111827;
       --muted: #6b7280;
-      --point: #1d4ed8;
+      --point: #1e40af;
       --point-soft: #dbeafe;
       --line: #e5e7eb;
       --sale: #dc2626;
+      --shadow: 0 14px 34px rgba(15, 23, 42, 0.14);
     }
 
     * { box-sizing: border-box; }
@@ -21,93 +22,95 @@
     body {
       margin: 0;
       font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at 20% -10%, #ffffff 0%, rgba(255, 255, 255, 0) 45%),
+        linear-gradient(180deg, #edf2f8 0%, #f7f8fb 100%);
       color: var(--text);
       line-height: 1.5;
+      padding: 12px;
     }
 
     .mobile-page {
-      width: 100%;
-      max-width: 420px;
+      width: min(100%, 460px);
       margin: 0 auto;
       background: var(--card);
-      min-height: 100vh;
+      min-height: calc(100vh - 24px);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
     }
 
     .hero {
-      background: linear-gradient(155deg, #eff6ff 0%, #ffffff 55%, #eef2ff 100%);
-      padding: 20px 20px 18px;
+      background: linear-gradient(160deg, #ecf4ff 0%, #fff 48%, #eff6ff 100%);
+      padding: 20px 18px 16px;
       border-bottom: 1px solid var(--line);
     }
 
-    .hero-visual {
-      margin: 0 0 14px;
+    .hero-visual,
+    .main-image {
+      margin: 0;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 12px 30px rgba(17, 24, 39, 0.18);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.7);
     }
 
-    .hero-visual img {
+    .hero-visual { margin-bottom: 14px; }
+
+    .hero-visual img,
+    .main-image img,
+    .thumb-grid img {
       width: 100%;
       display: block;
-      aspect-ratio: 3 / 4;
       object-fit: cover;
+      object-position: center top;
     }
+
+    .hero-visual img { aspect-ratio: 3 / 4; }
+    .main-image img { aspect-ratio: 3 / 4; }
 
     .badge {
       display: inline-block;
-      padding: 6px 10px;
+      padding: 6px 12px;
       border-radius: 999px;
-      background: #111827;
+      background: #0f172a;
       color: #fff;
-      font-size: 12px;
-      letter-spacing: 0.2px;
+      font-size: 11px;
+      letter-spacing: 0.8px;
       margin-bottom: 12px;
+      font-weight: 700;
     }
 
     h1 {
       margin: 0;
-      font-size: 24px;
-      line-height: 1.35;
+      font-size: 25px;
+      line-height: 1.32;
+      letter-spacing: -0.4px;
     }
 
     .sub {
-      margin: 10px 0 0;
+      margin: 10px 0 14px;
       color: var(--muted);
       font-size: 14px;
     }
 
-    .main-image {
-      margin: 16px 0 8px;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(30, 64, 175, 0.15);
-    }
-
-    .main-image img {
-      width: 100%;
-      display: block;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-    }
+    .main-image { margin-bottom: 10px; }
 
     .thumb-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 8px;
-      margin-top: 8px;
     }
 
     .thumb-grid img {
-      width: 100%;
-      border-radius: 10px;
+      border-radius: 11px;
       aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border: 1px solid var(--line);
+      border: 1px solid #dbe3ef;
+      background: #f8fafc;
     }
 
     .section {
-      padding: 18px 20px;
+      padding: 18px;
       border-bottom: 8px solid #f3f4f6;
     }
 
@@ -119,23 +122,9 @@
       flex-wrap: wrap;
     }
 
-    .rate {
-      color: var(--sale);
-      font-weight: 700;
-      font-size: 20px;
-    }
-
-    .price {
-      font-size: 25px;
-      font-weight: 800;
-      letter-spacing: -0.3px;
-    }
-
-    .origin {
-      color: #9ca3af;
-      text-decoration: line-through;
-      font-size: 14px;
-    }
+    .rate { color: var(--sale); font-weight: 700; font-size: 20px; }
+    .price { font-size: 26px; font-weight: 800; letter-spacing: -0.3px; }
+    .origin { color: #9ca3af; text-decoration: line-through; font-size: 14px; }
 
     .delivery {
       background: #f9fafb;
@@ -145,20 +134,9 @@
       font-size: 14px;
     }
 
-    .delivery b { color: #111827; }
+    .title { margin: 0 0 10px; font-size: 18px; font-weight: 800; }
 
-    .title {
-      margin: 0 0 10px;
-      font-size: 18px;
-      font-weight: 800;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
     .chip {
       background: var(--point-soft);
       color: var(--point);
@@ -177,22 +155,16 @@
 
     .detail-list li {
       display: grid;
-      grid-template-columns: 90px 1fr;
+      grid-template-columns: 92px 1fr;
       gap: 10px;
       padding: 12px 0;
       border-bottom: 1px solid var(--line);
       font-size: 14px;
     }
 
-    .detail-list .key {
-      color: var(--muted);
-      font-weight: 600;
-    }
+    .detail-list .key { color: var(--muted); font-weight: 600; }
 
-    .fit-cards {
-      display: grid;
-      gap: 10px;
-    }
+    .fit-cards { display: grid; gap: 10px; }
 
     .fit-card {
       background: #f9fafb;
@@ -215,22 +187,22 @@
     .review-head {
       display: flex;
       justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
       font-size: 13px;
       color: var(--muted);
       margin-bottom: 8px;
     }
 
-    .review p {
-      margin: 0;
-      font-size: 14px;
-    }
+    .review p { margin: 0; font-size: 14px; }
 
     .sticky-bar {
       position: sticky;
       bottom: 0;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
       border-top: 1px solid var(--line);
-      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
       display: grid;
       grid-template-columns: 1fr 2fr;
       gap: 10px;
@@ -244,14 +216,16 @@
       font-weight: 700;
     }
 
-    .btn-like {
-      background: #f3f4f6;
-      color: #111827;
-    }
+    .btn-like { background: #f3f4f6; color: #111827; }
+    .btn-buy { background: #111827; color: #fff; }
 
-    .btn-buy {
-      background: #111827;
-      color: #fff;
+    @media (max-width: 360px) {
+      body { padding: 0; }
+      .mobile-page { border-radius: 0; width: 100%; min-height: 100vh; }
+      .hero, .section { padding-left: 14px; padding-right: 14px; }
+      .thumb-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .detail-list li { grid-template-columns: 74px 1fr; }
+      .sticky-bar { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -259,21 +233,22 @@
   <main class="mobile-page">
     <section class="hero">
       <figure class="hero-visual">
-        <img id="heroImage" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80" alt="여성 모델이 여름 데님을 착용한 메인 비주얼" />
+        <img id="heroImage" src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1400&q=80" alt="여성 모델 전신 청바지 착용 메인 이미지" />
       </figure>
 
-      <span class="badge">SUMMER DENIM COLLECTION</span>
+      <span class="badge">PREMIUM SUMMER DENIM</span>
       <h1>쿨링 와이드 데님 팬츠</h1>
-      <p class="sub">가볍고 시원한 썸머 원단으로 한여름에도 쾌적하게.</p>
+      <p class="sub">한여름에도 가볍고 세련된 실루엣을 완성하는 프리미엄 데님.</p>
 
       <figure class="main-image">
-        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80" alt="여름 여성 와이드 청바지 대표 이미지" />
+        <img src="https://images.unsplash.com/photo-1475180098004-ca77a66827be?auto=format&fit=crop&w=1000&q=80" alt="여성 청바지 전신 코디 이미지" />
       </figure>
 
       <div class="thumb-grid">
-        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500&q=80" alt="청바지 착용 컷 1" />
-        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80" alt="청바지 착용 컷 2" />
-        <img src="https://images.unsplash.com/photo-1543087903-1ac2ec7aa8f9?auto=format&fit=crop&w=500&q=80" alt="청바지 디테일 컷" />
+        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=500&q=80" alt="여성 청바지 착용 이미지 1" />
+        <img src="https://images.unsplash.com/photo-1543087903-1ac2ec7aa8f9?auto=format&fit=crop&w=500&q=80" alt="여성 청바지 착용 이미지 2" />
+        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=500&q=80" alt="여성 청바지 스타일 이미지 3" />
+        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=500&q=80" alt="여성 청바지 디테일 이미지 4" />
       </div>
     </section>
 
@@ -347,8 +322,7 @@
   </main>
 
   <script>
-    // 메인 비주얼 이미지를 쉽게 교체할 수 있는 변수
-    const heroImage = "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80";
+    const heroImage = "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1400&q=80";
     document.getElementById("heroImage").src = heroImage;
   </script>
 </body>
