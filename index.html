@@ -1,18 +1,331 @@
-<!doctype html><html lang="ko"><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>STELLA MEDIA LAB · Melody Lab (Demo)</title>
-<style>body{font:16px/1.6 system-ui;margin:40px;max-width:720px}button{padding:10px 14px;border:0;border-radius:10px;background:#111;color:#fff}</style>
-<h1>Melody Lab (Demo)</h1>
-<p>장르/무드/템포를 적고 <b>생성</b>을 누르면 데모 오디오가 재생됩니다. (지금은 더미 파일)</p>
-<input id="p" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:10px" placeholder="예: 잔잔한 피아노 90bpm 따뜻한 무드">
-<div style="margin-top:12px"><button onclick="play()">생성</button></div>
-<audio id="a" controls style="margin-top:16px;width:100%"></audio>
-<script>
-  function play(){
-    // 추후: 여기서 실제 음악 생성 API를 호출
-    document.getElementById('a').src =
-      'https://files.freemusicarchive.org/storage-freemusicarchive-org/tracks/AWOL.mp3';
-    document.getElementById('a').play();
-  }
-</script>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>여름 여성 청바지 상세페이지</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --point: #1d4ed8;
+      --point-soft: #dbeafe;
+      --line: #e5e7eb;
+      --sale: #dc2626;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .mobile-page {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+      background: var(--card);
+      min-height: 100vh;
+    }
+
+    .hero {
+      background: linear-gradient(155deg, #eff6ff 0%, #ffffff 55%, #eef2ff 100%);
+      padding: 26px 20px 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #111827;
+      color: #fff;
+      font-size: 12px;
+      letter-spacing: 0.2px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.35;
+    }
+
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .main-image {
+      margin: 16px 0 8px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(30, 64, 175, 0.15);
+    }
+
+    .main-image img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .thumb-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .thumb-grid img {
+      width: 100%;
+      border-radius: 10px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border: 1px solid var(--line);
+    }
+
+    .section {
+      padding: 18px 20px;
+      border-bottom: 8px solid #f3f4f6;
+    }
+
+    .price-line {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .rate {
+      color: var(--sale);
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .price {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+
+    .origin {
+      color: #9ca3af;
+      text-decoration: line-through;
+      font-size: 14px;
+    }
+
+    .delivery {
+      background: #f9fafb;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    .delivery b { color: #111827; }
+
+    .title {
+      margin: 0 0 10px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      background: var(--point-soft);
+      color: var(--point);
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .detail-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .detail-list li {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 10px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    .detail-list .key {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .fit-cards {
+      display: grid;
+      gap: 10px;
+    }
+
+    .fit-card {
+      background: #f9fafb;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    .fit-card b { display: block; margin-bottom: 4px; }
+
+    .review {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      margin-bottom: 10px;
+      background: #fff;
+    }
+
+    .review-head {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .review p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .sticky-bar {
+      position: sticky;
+      bottom: 0;
+      background: #fff;
+      border-top: 1px solid var(--line);
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 10px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 12px;
+      padding: 14px 10px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .btn-like {
+      background: #f3f4f6;
+      color: #111827;
+    }
+
+    .btn-buy {
+      background: #111827;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <main class="mobile-page">
+    <section class="hero">
+      <span class="badge">SUMMER DENIM COLLECTION</span>
+      <h1>쿨링 와이드 데님 팬츠</h1>
+      <p class="sub">가볍고 시원한 썸머 원단으로 한여름에도 쾌적하게.</p>
+
+      <figure class="main-image">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80" alt="여름 여성 와이드 청바지 대표 이미지" />
+      </figure>
+
+      <div class="thumb-grid">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500&q=80" alt="청바지 착용 컷 1" />
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80" alt="청바지 착용 컷 2" />
+        <img src="https://images.unsplash.com/photo-1543087903-1ac2ec7aa8f9?auto=format&fit=crop&w=500&q=80" alt="청바지 디테일 컷" />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="price-line">
+        <span class="rate">28%</span>
+        <span class="price">39,900원</span>
+        <span class="origin">55,000원</span>
+      </div>
+      <div class="delivery">
+        <b>무료배송</b> · 오늘 주문 시 내일 출고<br />
+        제주/도서산간 지역은 추가 배송비가 부과될 수 있습니다.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="title">주요 포인트</h2>
+      <div class="chips">
+        <span class="chip">접촉 냉감 원단</span>
+        <span class="chip">하이웨이스트</span>
+        <span class="chip">체형 커버 와이드핏</span>
+        <span class="chip">신축성 GOOD</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="title">상품 정보</h2>
+      <ul class="detail-list">
+        <li><span class="key">소재</span><span>코튼 74% / 폴리 24% / 스판 2%</span></li>
+        <li><span class="key">컬러</span><span>라이트블루, 미디엄블루</span></li>
+        <li><span class="key">사이즈</span><span>S(25-26), M(27-28), L(29-30)</span></li>
+        <li><span class="key">두께감</span><span>얇음 · 비침 없음 · 여름용</span></li>
+        <li><span class="key">제조국</span><span>대한민국</span></li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="title">핏 가이드</h2>
+      <div class="fit-cards">
+        <article class="fit-card">
+          <b>155cm · S 사이즈</b>
+          발등을 살짝 덮는 롱한 기장감, 허리는 편안하게 핏됩니다.
+        </article>
+        <article class="fit-card">
+          <b>163cm · M 사이즈</b>
+          발목 아래까지 자연스럽게 떨어지는 세미 와이드 핏입니다.
+        </article>
+        <article class="fit-card">
+          <b>170cm · L 사이즈</b>
+          발목 라인이 드러나는 깔끔한 기장으로 연출됩니다.
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="title">리뷰</h2>
+      <article class="review">
+        <div class="review-head"><span>★★★★★ 민*아</span><span>키 162cm · M 구매</span></div>
+        <p>원단이 정말 가볍고 여름에 입기 좋아요. 허리 들뜸 없이 핏이 예쁩니다!</p>
+      </article>
+      <article class="review">
+        <div class="review-head"><span>★★★★☆ 정*윤</span><span>키 168cm · L 구매</span></div>
+        <p>다리가 길어 보이고 색감이 시원해요. 얇지만 비침이 없어 만족합니다.</p>
+      </article>
+    </section>
+
+    <div class="sticky-bar">
+      <button class="btn btn-like">♡ 찜하기</button>
+      <button class="btn btn-buy">구매하기</button>
+    </div>
+  </main>
+</body>
 </html>
