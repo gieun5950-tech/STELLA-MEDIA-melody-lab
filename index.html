@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>여성 여름 청바지 상세페이지 12장 템플릿</title>
+  <title>프리미엄 여성 데님 상세페이지 템플릿</title>
   <style>
     :root {
-      --bg-top: #dce9fb;
-      --bg-bottom: #f8fbff;
+      --bg-top: #f3f4f6;
+      --bg-bottom: #ffffff;
       --card: #ffffff;
-      --text: #0f172a;
-      --muted: #64748b;
-      --navy: #102a56;
-      --light-denim: #d8e9ff;
-      --line: #dbe6f5;
-      --shadow: 0 28px 62px rgba(16, 42, 86, 0.14);
+      --text: #111111;
+      --muted: #555555;
+      --navy: #1b1b1b;
+      --light-denim: #f1f2f4;
+      --line: #e5e7eb;
+      --shadow: 0 20px 44px rgba(17, 17, 17, 0.08);
       --page-max: 640px;
       --page-padding: 24px;
     }
@@ -29,7 +29,7 @@
       background:
         radial-gradient(circle at 12% -8%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 35%),
         radial-gradient(circle at 88% 10%, rgba(186, 215, 255, 0.5) 0%, rgba(186, 215, 255, 0) 30%),
-        linear-gradient(165deg, var(--bg-top) 0%, #eaf1fc 45%, var(--bg-bottom) 100%);
+        linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
       padding: var(--page-padding);
     }
 
@@ -46,7 +46,7 @@
     .page-head {
       padding: 40px 34px;
       border-bottom: 1px solid var(--line);
-      background: linear-gradient(160deg, #edf4ff 0%, #ffffff 55%, #eff6ff 100%);
+      background: linear-gradient(160deg, #fafafa 0%, #ffffff 55%, #f3f4f6 100%);
     }
 
     .badge {
@@ -138,30 +138,14 @@
       overflow: hidden;
     }
 
-    .image-slot::before {
-      content: "";
-      position: absolute;
-      inset: 14px;
+    .image-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       border-radius: 12px;
-      border: 1px dashed #b9cff3;
-      background:
-        repeating-linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.65) 0,
-          rgba(255, 255, 255, 0.65) 10px,
-          rgba(216, 233, 255, 0.6) 10px,
-          rgba(216, 233, 255, 0.6) 20px
-        );
-      z-index: 0;
-    }
-
-    .image-slot > span {
       position: relative;
-      z-index: 1;
-      background: rgba(255, 255, 255, 0.88);
-      border: 1px solid #c7d9f5;
-      border-radius: 999px;
-      padding: 8px 14px;
+      z-index: 2;
+      filter: saturate(0.94) contrast(1.03);
     }
 
     .copy-slot {
@@ -317,81 +301,81 @@
 <body>
   <main class="page">
     <header class="page-head">
-      <span class="badge">SUMMER DENIM DETAIL TEMPLATE</span>
-      <h1>쿨링 와이드 데님 팬츠<br />상세페이지 12장 구성</h1>
-      <p class="intro">외부 이미지 없이, 나중에 이미지를 1장씩 바로 교체할 수 있도록 이미지 영역/카피 영역을 분리한 템플릿입니다.</p>
+      <span class="badge">MUSINSA · 29CM MOOD TEMPLATE</span>
+      <h1>프리미엄 여성 데님<br />상세페이지 템플릿</h1>
+      <p class="intro">업로드된 PNG 10장을 자동 연결해 무신사/29CM 감성으로 정렬한 반응형 상세페이지입니다.</p>
     </header>
 
     <section class="deck">
       <article class="slide-card">
         <div class="slide-meta"><span class="slide-no">1장</span><h2 class="slide-title">메인 비주얼</h2></div>
-        <figure class="image-slot hero-image" id="hero-image"><span>이미지 1 삽입 예정</span></figure>
+        <figure class="image-slot" id="hero-image"><img src="ChatGPT Image 2026년 5월 17일 오전 06_50_42.png" alt="프리미엄 여성 데님 상세 이미지 1" loading="eager" /></figure>
         <div class="copy-slot"><span class="copy-label">카피 영역</span><h3 class="copy-subtitle">브랜드 첫인상 헤드라인</h3><p class="copy-text">브랜드 한 줄 메시지와 핵심 훅 카피를 입력하세요.</p></div>
       </article>
 
       <article class="slide-card">
         <div class="slide-meta"><span class="slide-no">2장</span><h2 class="slide-title">여름 청바지 문제 제기</h2></div>
-        <figure class="image-slot cooling-fit-image" id="cooling-fit-image"><span>이미지 2 삽입 예정</span></figure>
+        <figure class="image-slot" id="cooling-fit-image"><img src="ChatGPT Image 2026년 5월 17일 오후 05_03_58.png" alt="프리미엄 여성 데님 상세 이미지 2" loading="eager" /></figure>
         <div class="copy-slot"><span class="copy-label">카피 영역</span><h3 class="copy-subtitle">여름 데님의 불편함 공감</h3><p class="copy-text">더위, 답답함, 핏 무너짐 등 문제 상황을 입력하세요.</p></div>
       </article>
 
       <article class="slide-card">
         <div class="slide-meta"><span class="slide-no">3장</span><h2 class="slide-title">쿨링 소재 강조</h2></div>
-        <figure class="image-slot cooling-fit-image" id="cooling-material-image"><span>이미지 3 삽입 예정</span></figure>
+        <figure class="image-slot" id="cooling-material-image"><img src="ChatGPT Image 2026년 5월 17일 오후 05_05_10.png" alt="프리미엄 여성 데님 상세 이미지 3" loading="lazy" /></figure>
         <div class="copy-slot"><span class="copy-label">카피 영역</span><h3 class="copy-subtitle">입는 순간 느껴지는 쿨링감</h3><p class="copy-text">접촉 냉감/통기성/가벼운 착용감 포인트를 입력하세요.</p></div>
       </article>
 
       <article class="slide-card">
         <div class="slide-meta"><span class="slide-no">4장</span><h2 class="slide-title">와이드 핏 강조</h2></div>
-        <figure class="image-slot wide-fit-image" id="wide-fit-image"><span>이미지 4 삽입 예정</span></figure>
+        <figure class="image-slot" id="wide-fit-image"><img src="ChatGPT Image 2026년 5월 17일 오후 05_06_52.png" alt="프리미엄 여성 데님 상세 이미지 4" loading="lazy" /></figure>
         <div class="copy-slot"><span class="copy-label">카피 영역</span><h3 class="copy-subtitle">프리미엄 와이드 실루엣</h3><p class="copy-text">실루엣과 체형 커버 장점을 입력하세요.</p></div>
       </article>
 
       <article class="slide-card">
         <div class="slide-meta"><span class="slide-no">5장</span><h2 class="slide-title">허리와 활동성</h2></div>
-        <figure class="image-slot wide-fit-image" id="waist-mobility-image"><span>이미지 5 삽입 예정</span></figure>
+        <figure class="image-slot" id="waist-mobility-image"><img src="ChatGPT Image 2026년 5월 17일 오후 05_09_27.png" alt="프리미엄 여성 데님 상세 이미지 5" loading="lazy" /></figure>
         <div class="copy-slot"><span class="copy-label">카피 영역</span><h3 class="copy-subtitle">안정적인 허리 설계</h3><p class="copy-text">허리 안정감, 신축성, 장시간 착용 포인트를 입력하세요.</p></div>
       </article>
 
       <article class="slide-card">
         <div class="slide-meta"><span class="slide-no">6장</span><h2 class="slide-title">앉고 움직이는 착용감</h2></div>
-        <figure class="image-slot body-fit-image" id="body-fit-movement-image"><span>이미지 6 삽입 예정</span></figure>
+        <figure class="image-slot" id="body-fit-movement-image"><img src="ChatGPT Image 2026년 5월 17일 오후 05_10_45.png" alt="프리미엄 여성 데님 상세 이미지 6" loading="lazy" /></figure>
         <div class="copy-slot"><span class="copy-label">카피 영역</span><h3 class="copy-subtitle">활동할수록 편안한 착용감</h3><p class="copy-text">활동 동작 시 편안함과 복원력을 입력하세요.</p></div>
       </article>
 
       <article class="slide-card">
         <div class="slide-meta"><span class="slide-no">7장</span><h2 class="slide-title">야외 카페 착용컷</h2></div>
-        <figure class="image-slot outdoor-look-image" id="outdoor-look-image"><span>이미지 7 삽입 예정</span></figure>
+        <figure class="image-slot" id="outdoor-look-image"><img src="ChatGPT Image 2026년 5월 17일 오후 05_11_55.png" alt="프리미엄 여성 데님 상세 이미지 7" loading="lazy" /></figure>
         <div class="copy-slot"><span class="copy-label">카피 영역</span><h3 class="copy-subtitle">도시적인 라이프스타일 무드</h3><p class="copy-text">라이프스타일 무드와 분위기 카피를 입력하세요.</p></div>
       </article>
 
       <article class="slide-card">
         <div class="slide-meta"><span class="slide-no">8장</span><h2 class="slide-title">원단 디테일</h2></div>
-        <figure class="image-slot fabric-detail-image" id="fabric-detail-image"><span>이미지 8 삽입 예정</span></figure>
+        <figure class="image-slot" id="fabric-detail-image"><img src="ChatGPT Image 2026년 5월 17일 오후 05_13_07.png" alt="프리미엄 여성 데님 상세 이미지 8" loading="lazy" /></figure>
         <div class="copy-slot"><span class="copy-label">카피 영역</span><h3 class="copy-subtitle">원단과 봉제의 완성도</h3><p class="copy-text">결감, 조직감, 봉제 디테일 설명을 입력하세요.</p></div>
       </article>
 
       <article class="slide-card">
         <div class="slide-meta"><span class="slide-no">9장</span><h2 class="slide-title">코디 예시</h2></div>
-        <figure class="image-slot styling-look-image" id="styling-look-image"><span>이미지 9 삽입 예정</span></figure>
+        <figure class="image-slot" id="styling-look-image"><img src="ChatGPT Image 2026년 5월 17일 오후 05_14_21.png" alt="프리미엄 여성 데님 상세 이미지 9" loading="lazy" /></figure>
         <div class="copy-slot"><span class="copy-label">카피 영역</span><h3 class="copy-subtitle">데일리 코디 활용법</h3><p class="copy-text">상의/신발/소품 매치 예시를 입력하세요.</p></div>
       </article>
 
       <article class="slide-card">
         <div class="slide-meta"><span class="slide-no">10장</span><h2 class="slide-title">체형별 추천</h2></div>
-        <figure class="image-slot body-fit-image" id="body-fit-image"><span>이미지 10 삽입 예정</span></figure>
+        <figure class="image-slot" id="body-fit-image"><img src="ChatGPT Image 2026년 5월 17일 오후 05_15_20.png" alt="프리미엄 여성 데님 상세 이미지 10" loading="lazy" /></figure>
         <div class="copy-slot"><span class="copy-label">카피 영역</span><h3 class="copy-subtitle">체형 맞춤 핏 제안</h3><p class="copy-text">신장/체형별 사이즈 추천 가이드를 입력하세요.</p></div>
       </article>
 
       <article class="slide-card">
         <div class="slide-meta"><span class="slide-no">11장</span><h2 class="slide-title">구매 포인트 요약</h2></div>
-        <figure class="image-slot ending-brand-image" id="purchase-point-image"><span>이미지 11 삽입 예정</span></figure>
+        <figure class="image-slot ending-brand-image" id="purchase-point-image" aria-label="확장 이미지 슬롯"></figure>
         <div class="copy-slot"><span class="copy-label">카피 영역</span><h3 class="copy-subtitle">구매 전 핵심 체크포인트</h3><p class="copy-text">핵심 USP 3~4가지를 짧게 요약하세요.</p></div>
       </article>
 
       <article class="slide-card cta">
         <div class="slide-meta"><span class="slide-no">12장</span><h2 class="slide-title">브랜드 감성 마무리</h2></div>
-        <figure class="image-slot ending-brand-image" id="ending-brand-image"><span>이미지 12 삽입 예정</span></figure>
+        <figure class="image-slot ending-brand-image" id="ending-brand-image" aria-label="확장 이미지 슬롯"></figure>
         <div class="copy-slot">
           <span class="copy-label">카피 영역</span>
           <h3 class="copy-subtitle">지금, 가장 시원한 데님을 선택하세요</h3>
