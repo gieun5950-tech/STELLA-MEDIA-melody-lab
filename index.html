@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>여름 여성 청바지 상세페이지</title>
+  <title>여성 여름 청바지 상세페이지 12장 템플릿</title>
   <style>
     :root {
-      --bg: #e4ebf7;
-      --card: #fdfefe;
+      --bg-top: #dce9fb;
+      --bg-bottom: #f8fbff;
+      --card: #ffffff;
       --text: #0f172a;
       --muted: #64748b;
-      --point: #1d4ed8;
-      --point-soft: #dbeafe;
-      --line: #d9e3f1;
-      --sale: #dc2626;
-      --shadow: 0 16px 34px rgba(15, 23, 42, 0.18);
+      --navy: #102a56;
+      --light-denim: #d8e9ff;
+      --line: #dbe6f5;
+      --shadow: 0 16px 36px rgba(16, 42, 86, 0.14);
       --page-max: 460px;
-      --page-padding: 12px;
+      --page-padding: 14px;
     }
 
     * { box-sizing: border-box; }
@@ -24,217 +24,182 @@
     body {
       margin: 0;
       font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-      background:
-        radial-gradient(circle at 10% -6%, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0) 35%),
-        radial-gradient(circle at 92% 12%, rgba(147, 197, 253, 0.26) 0%, rgba(147, 197, 253, 0) 34%),
-        linear-gradient(165deg, #d8e4f6 0%, #e8eef8 38%, #f8fbff 100%);
       color: var(--text);
-      line-height: 1.5;
+      line-height: 1.55;
+      background:
+        radial-gradient(circle at 12% -8%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 35%),
+        radial-gradient(circle at 88% 10%, rgba(186, 215, 255, 0.5) 0%, rgba(186, 215, 255, 0) 30%),
+        linear-gradient(165deg, var(--bg-top) 0%, #eaf1fc 45%, var(--bg-bottom) 100%);
       padding: var(--page-padding);
     }
 
-    .mobile-page {
+    .page {
       width: min(100%, var(--page-max));
       margin: 0 auto;
       background: var(--card);
-      min-height: calc(100vh - 24px);
-      border-radius: 26px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.86);
-      box-shadow:
-        0 20px 44px rgba(15, 23, 42, 0.13),
-        0 2px 8px rgba(15, 23, 42, 0.06);
-    }
-
-    .hero {
-      background: linear-gradient(155deg, #e6efff 0%, #ffffff 48%, #edf4ff 100%);
-      padding: 20px 18px 16px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero-visual,
-    .main-image {
-      margin: 0;
-      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 24px;
       overflow: hidden;
       box-shadow: var(--shadow);
-      border: 1px solid rgba(255, 255, 255, 0.7);
     }
 
-    .hero-visual { margin-bottom: 14px; }
-
-    .hero-visual img,
-    .main-image img,
-    .thumb-grid img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      object-position: center top;
+    .page-head {
+      padding: 22px 18px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(160deg, #edf4ff 0%, #ffffff 55%, #eff6ff 100%);
     }
-
-    .hero-visual img { aspect-ratio: 3 / 4; }
-    .main-image img { aspect-ratio: 3 / 4; }
 
     .badge {
       display: inline-block;
       padding: 6px 12px;
       border-radius: 999px;
-      background: #0f172a;
-      color: #fff;
       font-size: 11px;
       letter-spacing: 0.8px;
-      margin-bottom: 12px;
       font-weight: 700;
+      background: var(--navy);
+      color: #fff;
+      margin-bottom: 10px;
     }
 
     h1 {
       margin: 0;
-      font-size: 25px;
-      line-height: 1.32;
-      letter-spacing: -0.4px;
+      font-size: 24px;
+      line-height: 1.35;
+      letter-spacing: -0.35px;
     }
 
-    .sub {
-      margin: 10px 0 14px;
+    .intro {
+      margin: 9px 0 0;
       color: var(--muted);
       font-size: 14px;
     }
 
-    .main-image { margin-bottom: 10px; }
-
-    .thumb-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 8px;
-    }
-
-    .thumb-grid img {
-      border-radius: 11px;
-      aspect-ratio: 1 / 1;
-      border: 1px solid #dbe3ef;
-      background: #f8fafc;
-    }
-
-    .section {
-      padding: 18px;
-      border-bottom: 8px solid #f3f4f6;
-    }
-
-    .price-line {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      margin-bottom: 10px;
-      flex-wrap: wrap;
-    }
-
-    .rate { color: var(--sale); font-weight: 700; font-size: 20px; }
-    .price { font-size: 26px; font-weight: 800; letter-spacing: -0.3px; }
-    .origin { color: #9ca3af; text-decoration: line-through; font-size: 14px; }
-
-    .delivery {
-      background: #f9fafb;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 12px;
-      font-size: 14px;
-    }
-
-    .title { margin: 0 0 10px; font-size: 18px; font-weight: 800; }
-
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-    .chip {
-      background: var(--point-soft);
-      color: var(--point);
-      padding: 8px 10px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .detail-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      border-top: 1px solid var(--line);
-    }
-
-    .detail-list li {
-      display: grid;
-      grid-template-columns: 92px 1fr;
-      gap: 10px;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--line);
-      font-size: 14px;
-    }
-
-    .detail-list .key { color: var(--muted); font-weight: 600; }
-
-    .fit-cards { display: grid; gap: 10px; }
-
-    .fit-card {
-      background: #f9fafb;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 12px;
-      font-size: 14px;
-    }
-
-    .fit-card b { display: block; margin-bottom: 4px; }
-
-    .review {
+    .deck {
       padding: 14px;
+      display: grid;
+      gap: 12px;
+      background: #f6f9ff;
+    }
+
+    .slide-card {
+      background: #fff;
       border: 1px solid var(--line);
-      border-radius: 12px;
-      margin-bottom: 10px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(16, 42, 86, 0.06);
+    }
+
+    .slide-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      background: #f8fbff;
+    }
+
+    .slide-no {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--navy);
+      background: var(--light-denim);
+      border: 1px solid #c9defb;
+      border-radius: 999px;
+      padding: 5px 10px;
+      white-space: nowrap;
+    }
+
+    .slide-title {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text);
+      text-align: right;
+      letter-spacing: -0.2px;
+    }
+
+    .image-slot {
+      margin: 0;
+      aspect-ratio: 3 / 4;
+      display: grid;
+      place-items: center;
+      padding: 12px;
+      text-align: center;
+      color: #1e3a8a;
+      font-size: 15px;
+      font-weight: 700;
+      background:
+        linear-gradient(145deg, #eef5ff 0%, #e2efff 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .copy-slot {
+      padding: 14px;
       background: #fff;
     }
 
-    .review-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-      flex-wrap: wrap;
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .review p { margin: 0; font-size: 14px; }
-
-    .sticky-bar {
-      position: sticky;
-      bottom: 0;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(8px);
-      border-top: 1px solid var(--line);
-      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 10px;
-    }
-
-    .btn {
-      border: 0;
-      border-radius: 12px;
-      padding: 14px 10px;
-      font-size: 15px;
+    .copy-label {
+      display: inline-block;
+      margin-bottom: 6px;
+      font-size: 11px;
       font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.5px;
     }
 
-    .btn-like { background: #e7eef9; color: #0f172a; }
-    .btn-buy { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); color: #fff; }
+    .copy-text {
+      margin: 0;
+      font-size: 14px;
+      color: #334155;
+    }
 
     @media (max-width: 767px) {
       body { padding: 0; }
-      .mobile-page { border-radius: 0; width: 100%; min-height: 100vh; }
-      .hero, .section { padding-left: 14px; padding-right: 14px; }
+      .page { width: 100%; border-radius: 0; min-height: 100vh; }
+      .page-head { padding: 20px 16px; }
+      .deck { padding: 12px; gap: 10px; }
     }
 
-    @media (max-width: 360px) {
-      .thumb-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .detail-list li { grid-template-columns: 74px 1fr; }
-      .sticky-bar { grid-template-columns: 1fr; }
+    @media (min-width: 768px) and (max-width: 1199px) {
+      :root {
+        --page-max: 760px;
+        --page-padding: 28px;
+      }
+
+      .page-head { padding: 30px 28px; }
+      h1 { font-size: 30px; }
+      .intro { font-size: 15px; }
+      .deck { padding: 20px; gap: 14px; }
+      .slide-meta { padding: 13px 16px; }
+      .slide-title { font-size: 17px; }
+      .copy-text { font-size: 15px; }
+    }
+
+    @media (min-width: 1200px) {
+      :root {
+        --page-max: 1020px;
+        --page-padding: 40px;
+      }
+
+      body {
+        background:
+          radial-gradient(circle at 8% 8%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 35%),
+          radial-gradient(circle at 92% 18%, rgba(178, 209, 251, 0.55) 0%, rgba(178, 209, 251, 0) 30%),
+          linear-gradient(152deg, #d7e4f9 0%, #ecf2fb 48%, #f8fbff 100%);
+      }
+
+      .page { border-radius: 30px; }
+      .page-head { padding: 34px 34px 28px; }
+      h1 { font-size: 34px; }
+      .intro { font-size: 16px; }
+      .deck {
+        padding: 24px;
+        gap: 16px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .slide-title { font-size: 17px; }
+      .copy-text { font-size: 15px; }
     }
 
     @media (min-width: 768px) and (max-width: 1199px) {
@@ -277,100 +242,86 @@
   </style>
 </head>
 <body>
-  <main class="mobile-page">
-    <section class="hero">
-      <figure class="hero-visual">
-        <img id="heroImage" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=80" alt="도시적인 분위기의 세련된 여성 모델이 연청 와이드 데님 팬츠와 화이트 스니커즈를 착용한 메인 이미지" />
-      </figure>
+  <main class="page">
+    <header class="page-head">
+      <span class="badge">SUMMER DENIM DETAIL TEMPLATE</span>
+      <h1>쿨링 와이드 데님 팬츠<br />상세페이지 12장 구성</h1>
+      <p class="intro">외부 이미지 없이, 나중에 이미지를 1장씩 바로 교체할 수 있도록 이미지 영역/카피 영역을 분리한 템플릿입니다.</p>
+    </header>
 
-      <span class="badge">PREMIUM SUMMER DENIM</span>
-      <h1>쿨링 와이드 데님 팬츠</h1>
-      <p class="sub">한여름에도 가볍고 세련된 실루엣을 완성하는 프리미엄 데님.</p>
-
-      <figure class="main-image">
-        <img src="https://images.unsplash.com/photo-1464863979621-258859e62245?auto=format&fit=crop&w=1200&q=80" alt="긴 생머리 여성 모델의 프리미엄 스트릿 데님 코디 이미지" />
-      </figure>
-
-      <div class="thumb-grid">
-        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=80" alt="연청 와이드 데님 팬츠 착용 전신 스타일 이미지 1" />
-        <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=700&q=80" alt="화이트 스니커즈와 와이드 데님 매치 스타일 이미지 2" />
-        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=700&q=80" alt="도시적인 무드의 여성 데님 룩 이미지 3" />
-        <img src="https://images.unsplash.com/photo-1495385794356-15371f348c31?auto=format&fit=crop&w=700&q=80" alt="블랙 헬멧 소품과 함께한 바이커 감성 데님 스타일 이미지 4" />
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="price-line">
-        <span class="rate">28%</span>
-        <span class="price">39,900원</span>
-        <span class="origin">55,000원</span>
-      </div>
-      <div class="delivery">
-        <b>무료배송</b> · 오늘 주문 시 내일 출고<br />
-        제주/도서산간 지역은 추가 배송비가 부과될 수 있습니다.
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="title">주요 포인트</h2>
-      <div class="chips">
-        <span class="chip">접촉 냉감 원단</span>
-        <span class="chip">하이웨이스트</span>
-        <span class="chip">체형 커버 와이드핏</span>
-        <span class="chip">신축성 GOOD</span>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="title">상품 정보</h2>
-      <ul class="detail-list">
-        <li><span class="key">소재</span><span>코튼 74% / 폴리 24% / 스판 2%</span></li>
-        <li><span class="key">컬러</span><span>라이트블루, 미디엄블루</span></li>
-        <li><span class="key">사이즈</span><span>S(25-26), M(27-28), L(29-30)</span></li>
-        <li><span class="key">두께감</span><span>얇음 · 비침 없음 · 여름용</span></li>
-        <li><span class="key">제조국</span><span>대한민국</span></li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2 class="title">핏 가이드</h2>
-      <div class="fit-cards">
-        <article class="fit-card">
-          <b>155cm · S 사이즈</b>
-          발등을 살짝 덮는 롱한 기장감, 허리는 편안하게 핏됩니다.
-        </article>
-        <article class="fit-card">
-          <b>163cm · M 사이즈</b>
-          발목 아래까지 자연스럽게 떨어지는 세미 와이드 핏입니다.
-        </article>
-        <article class="fit-card">
-          <b>170cm · L 사이즈</b>
-          발목 라인이 드러나는 깔끔한 기장으로 연출됩니다.
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="title">리뷰</h2>
-      <article class="review">
-        <div class="review-head"><span>★★★★★ 민*아</span><span>키 162cm · M 구매</span></div>
-        <p>원단이 정말 가볍고 여름에 입기 좋아요. 허리 들뜸 없이 핏이 예쁩니다!</p>
+    <section class="deck">
+      <article class="slide-card">
+        <div class="slide-meta"><span class="slide-no">1장</span><h2 class="slide-title">메인 비주얼</h2></div>
+        <figure class="image-slot">이미지 1 삽입 예정</figure>
+        <div class="copy-slot"><span class="copy-label">카피 영역</span><p class="copy-text">브랜드 한 줄 메시지와 핵심 훅 카피를 입력하세요.</p></div>
       </article>
-      <article class="review">
-        <div class="review-head"><span>★★★★☆ 정*윤</span><span>키 168cm · L 구매</span></div>
-        <p>다리가 길어 보이고 색감이 시원해요. 얇지만 비침이 없어 만족합니다.</p>
+
+      <article class="slide-card">
+        <div class="slide-meta"><span class="slide-no">2장</span><h2 class="slide-title">여름 청바지 문제 제기</h2></div>
+        <figure class="image-slot">이미지 2 삽입 예정</figure>
+        <div class="copy-slot"><span class="copy-label">카피 영역</span><p class="copy-text">더위, 답답함, 핏 무너짐 등 문제 상황을 입력하세요.</p></div>
+      </article>
+
+      <article class="slide-card">
+        <div class="slide-meta"><span class="slide-no">3장</span><h2 class="slide-title">쿨링 소재 강조</h2></div>
+        <figure class="image-slot">이미지 3 삽입 예정</figure>
+        <div class="copy-slot"><span class="copy-label">카피 영역</span><p class="copy-text">접촉 냉감/통기성/가벼운 착용감 포인트를 입력하세요.</p></div>
+      </article>
+
+      <article class="slide-card">
+        <div class="slide-meta"><span class="slide-no">4장</span><h2 class="slide-title">와이드 핏 강조</h2></div>
+        <figure class="image-slot">이미지 4 삽입 예정</figure>
+        <div class="copy-slot"><span class="copy-label">카피 영역</span><p class="copy-text">실루엣과 체형 커버 장점을 입력하세요.</p></div>
+      </article>
+
+      <article class="slide-card">
+        <div class="slide-meta"><span class="slide-no">5장</span><h2 class="slide-title">허리와 활동성</h2></div>
+        <figure class="image-slot">이미지 5 삽입 예정</figure>
+        <div class="copy-slot"><span class="copy-label">카피 영역</span><p class="copy-text">허리 안정감, 신축성, 장시간 착용 포인트를 입력하세요.</p></div>
+      </article>
+
+      <article class="slide-card">
+        <div class="slide-meta"><span class="slide-no">6장</span><h2 class="slide-title">앉고 움직이는 착용감</h2></div>
+        <figure class="image-slot">이미지 6 삽입 예정</figure>
+        <div class="copy-slot"><span class="copy-label">카피 영역</span><p class="copy-text">활동 동작 시 편안함과 복원력을 입력하세요.</p></div>
+      </article>
+
+      <article class="slide-card">
+        <div class="slide-meta"><span class="slide-no">7장</span><h2 class="slide-title">야외 카페 착용컷</h2></div>
+        <figure class="image-slot">이미지 7 삽입 예정</figure>
+        <div class="copy-slot"><span class="copy-label">카피 영역</span><p class="copy-text">라이프스타일 무드와 분위기 카피를 입력하세요.</p></div>
+      </article>
+
+      <article class="slide-card">
+        <div class="slide-meta"><span class="slide-no">8장</span><h2 class="slide-title">원단 디테일</h2></div>
+        <figure class="image-slot">이미지 8 삽입 예정</figure>
+        <div class="copy-slot"><span class="copy-label">카피 영역</span><p class="copy-text">결감, 조직감, 봉제 디테일 설명을 입력하세요.</p></div>
+      </article>
+
+      <article class="slide-card">
+        <div class="slide-meta"><span class="slide-no">9장</span><h2 class="slide-title">코디 예시</h2></div>
+        <figure class="image-slot">이미지 9 삽입 예정</figure>
+        <div class="copy-slot"><span class="copy-label">카피 영역</span><p class="copy-text">상의/신발/소품 매치 예시를 입력하세요.</p></div>
+      </article>
+
+      <article class="slide-card">
+        <div class="slide-meta"><span class="slide-no">10장</span><h2 class="slide-title">체형별 추천</h2></div>
+        <figure class="image-slot">이미지 10 삽입 예정</figure>
+        <div class="copy-slot"><span class="copy-label">카피 영역</span><p class="copy-text">신장/체형별 사이즈 추천 가이드를 입력하세요.</p></div>
+      </article>
+
+      <article class="slide-card">
+        <div class="slide-meta"><span class="slide-no">11장</span><h2 class="slide-title">구매 포인트 요약</h2></div>
+        <figure class="image-slot">이미지 11 삽입 예정</figure>
+        <div class="copy-slot"><span class="copy-label">카피 영역</span><p class="copy-text">핵심 USP 3~4가지를 짧게 요약하세요.</p></div>
+      </article>
+
+      <article class="slide-card">
+        <div class="slide-meta"><span class="slide-no">12장</span><h2 class="slide-title">브랜드 감성 마무리</h2></div>
+        <figure class="image-slot">이미지 12 삽입 예정</figure>
+        <div class="copy-slot"><span class="copy-label">카피 영역</span><p class="copy-text">브랜드 톤의 엔딩 카피와 구매 유도 문구를 입력하세요.</p></div>
       </article>
     </section>
-
-    <div class="sticky-bar">
-      <button class="btn btn-like">♡ 찜하기</button>
-      <button class="btn btn-buy">구매하기</button>
-    </div>
   </main>
-
-  <script>
-    const heroImage = "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=80";
-    document.getElementById("heroImage").src = heroImage;
-  </script>
 </body>
 </html>
