@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>여성 여름 청바지 상세페이지 12장 템플릿</title>
+  <title>프리미엄 여성 데님 상세페이지 템플릿</title>
   <style>
     :root {
-      --bg-top: #dce9fb;
-      --bg-bottom: #f8fbff;
+      --bg-top: #f3f4f6;
+      --bg-bottom: #ffffff;
       --card: #ffffff;
-      --text: #0f172a;
-      --muted: #64748b;
-      --navy: #102a56;
-      --light-denim: #d8e9ff;
-      --line: #dbe6f5;
-      --shadow: 0 28px 62px rgba(16, 42, 86, 0.14);
+      --text: #111111;
+      --muted: #555555;
+      --navy: #1b1b1b;
+      --light-denim: #f1f2f4;
+      --line: #e5e7eb;
+      --shadow: 0 20px 44px rgba(17, 17, 17, 0.08);
       --page-max: 640px;
       --page-padding: 24px;
     }
@@ -29,7 +29,7 @@
       background:
         radial-gradient(circle at 12% -8%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 35%),
         radial-gradient(circle at 88% 10%, rgba(186, 215, 255, 0.5) 0%, rgba(186, 215, 255, 0) 30%),
-        linear-gradient(165deg, var(--bg-top) 0%, #eaf1fc 45%, var(--bg-bottom) 100%);
+        linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
       padding: var(--page-padding);
     }
 
@@ -46,7 +46,7 @@
     .page-head {
       padding: 40px 34px;
       border-bottom: 1px solid var(--line);
-      background: linear-gradient(160deg, #edf4ff 0%, #ffffff 55%, #eff6ff 100%);
+      background: linear-gradient(160deg, #fafafa 0%, #ffffff 55%, #f3f4f6 100%);
     }
 
     .badge {
@@ -156,12 +156,25 @@
     }
 
     .image-slot > span {
+      display:none;
+
       position: relative;
       z-index: 1;
       background: rgba(255, 255, 255, 0.88);
       border: 1px solid #c7d9f5;
       border-radius: 999px;
       padding: 8px 14px;
+    }
+
+
+    .image-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      position: relative;
+      z-index: 2;
+      filter: saturate(0.94) contrast(1.03);
     }
 
     .copy-slot {
@@ -317,9 +330,9 @@
 <body>
   <main class="page">
     <header class="page-head">
-      <span class="badge">SUMMER DENIM DETAIL TEMPLATE</span>
-      <h1>쿨링 와이드 데님 팬츠<br />상세페이지 12장 구성</h1>
-      <p class="intro">외부 이미지 없이, 나중에 이미지를 1장씩 바로 교체할 수 있도록 이미지 영역/카피 영역을 분리한 템플릿입니다.</p>
+      <span class="badge">MUSINSA · 29CM MOOD TEMPLATE</span>
+      <h1>프리미엄 여성 데님<br />상세페이지 템플릿</h1>
+      <p class="intro">업로드된 PNG 10장을 자동 연결해 무신사/29CM 감성으로 정렬한 반응형 상세페이지입니다.</p>
     </header>
 
     <section class="deck">
@@ -404,5 +417,32 @@
       </article>
     </section>
   </main>
+
+  <script>
+    const uploadedPngs = [
+      "ChatGPT Image 2026년 5월 17일 오전 06_50_42.png",
+      "ChatGPT Image 2026년 5월 17일 오후 05_03_58.png",
+      "ChatGPT Image 2026년 5월 17일 오후 05_05_10.png",
+      "ChatGPT Image 2026년 5월 17일 오후 05_06_52.png",
+      "ChatGPT Image 2026년 5월 17일 오후 05_09_27.png",
+      "ChatGPT Image 2026년 5월 17일 오후 05_10_45.png",
+      "ChatGPT Image 2026년 5월 17일 오후 05_11_55.png",
+      "ChatGPT Image 2026년 5월 17일 오후 05_13_07.png",
+      "ChatGPT Image 2026년 5월 17일 오후 05_14_21.png",
+      "ChatGPT Image 2026년 5월 17일 오후 05_15_20.png"
+    ];
+
+    const slots = document.querySelectorAll('.image-slot');
+    uploadedPngs.forEach((src, index) => {
+      const slot = slots[index];
+      if (!slot) return;
+      slot.innerHTML = '';
+      const img = document.createElement('img');
+      img.src = encodeURI(src);
+      img.alt = `프리미엄 여성 데님 상세 이미지 ${index + 1}`;
+      img.loading = index < 2 ? 'eager' : 'lazy';
+      slot.appendChild(img);
+    });
+  </script>
 </body>
 </html>
