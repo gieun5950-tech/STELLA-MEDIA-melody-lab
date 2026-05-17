@@ -6,15 +6,17 @@
   <title>여름 여성 청바지 상세페이지</title>
   <style>
     :root {
-      --bg: #eef2f7;
-      --card: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
-      --point: #1e40af;
+      --bg: #e4ebf7;
+      --card: #fdfefe;
+      --text: #0f172a;
+      --muted: #64748b;
+      --point: #1d4ed8;
       --point-soft: #dbeafe;
-      --line: #e5e7eb;
+      --line: #d9e3f1;
       --sale: #dc2626;
-      --shadow: 0 14px 34px rgba(15, 23, 42, 0.14);
+      --shadow: 0 16px 34px rgba(15, 23, 42, 0.18);
+      --page-max: 460px;
+      --page-padding: 12px;
     }
 
     * { box-sizing: border-box; }
@@ -23,25 +25,29 @@
       margin: 0;
       font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
       background:
-        radial-gradient(circle at 20% -10%, #ffffff 0%, rgba(255, 255, 255, 0) 45%),
-        linear-gradient(180deg, #edf2f8 0%, #f7f8fb 100%);
+        radial-gradient(circle at 10% -6%, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0) 35%),
+        radial-gradient(circle at 92% 12%, rgba(147, 197, 253, 0.26) 0%, rgba(147, 197, 253, 0) 34%),
+        linear-gradient(165deg, #d8e4f6 0%, #e8eef8 38%, #f8fbff 100%);
       color: var(--text);
       line-height: 1.5;
-      padding: 12px;
+      padding: var(--page-padding);
     }
 
     .mobile-page {
-      width: min(100%, 460px);
+      width: min(100%, var(--page-max));
       margin: 0 auto;
       background: var(--card);
       min-height: calc(100vh - 24px);
-      border-radius: 24px;
+      border-radius: 26px;
       overflow: hidden;
-      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.86);
+      box-shadow:
+        0 20px 44px rgba(15, 23, 42, 0.13),
+        0 2px 8px rgba(15, 23, 42, 0.06);
     }
 
     .hero {
-      background: linear-gradient(160deg, #ecf4ff 0%, #fff 48%, #eff6ff 100%);
+      background: linear-gradient(155deg, #e6efff 0%, #ffffff 48%, #edf4ff 100%);
       padding: 20px 18px 16px;
       border-bottom: 1px solid var(--line);
     }
@@ -216,16 +222,57 @@
       font-weight: 700;
     }
 
-    .btn-like { background: #f3f4f6; color: #111827; }
-    .btn-buy { background: #111827; color: #fff; }
+    .btn-like { background: #e7eef9; color: #0f172a; }
+    .btn-buy { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); color: #fff; }
 
-    @media (max-width: 360px) {
+    @media (max-width: 767px) {
       body { padding: 0; }
       .mobile-page { border-radius: 0; width: 100%; min-height: 100vh; }
       .hero, .section { padding-left: 14px; padding-right: 14px; }
+    }
+
+    @media (max-width: 360px) {
       .thumb-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .detail-list li { grid-template-columns: 74px 1fr; }
       .sticky-bar { grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+      :root {
+        --page-max: 760px;
+        --page-padding: 28px;
+      }
+      .hero { padding: 28px 26px 20px; }
+      .section { padding: 22px 26px; }
+      .thumb-grid { gap: 10px; }
+      h1 { font-size: 31px; }
+      .sub { font-size: 15px; }
+    }
+
+    @media (min-width: 1200px) {
+      :root {
+        --page-max: 1080px;
+        --page-padding: 44px;
+      }
+
+      body {
+        background:
+          radial-gradient(circle at 8% 8%, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0) 34%),
+          radial-gradient(circle at 90% 20%, rgba(191, 219, 254, 0.65) 0%, rgba(191, 219, 254, 0) 32%),
+          linear-gradient(150deg, #e5ebf3 0%, #f3f5fa 48%, #eceff5 100%);
+      }
+
+      .mobile-page {
+        min-height: calc(100vh - 88px);
+        border-radius: 30px;
+      }
+
+      .hero { padding: 34px 36px 24px; }
+      .section { padding: 26px 36px; }
+      .thumb-grid { gap: 12px; }
+      h1 { font-size: 34px; }
+      .sub { font-size: 16px; margin-bottom: 18px; }
+      .sticky-bar { padding-left: 24px; padding-right: 24px; }
     }
   </style>
 </head>
@@ -233,7 +280,7 @@
   <main class="mobile-page">
     <section class="hero">
       <figure class="hero-visual">
-        <img id="heroImage" src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1400&q=80" alt="여성 모델 전신 청바지 착용 메인 이미지" />
+        <img id="heroImage" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=80" alt="도시적인 분위기의 세련된 여성 모델이 연청 와이드 데님 팬츠와 화이트 스니커즈를 착용한 메인 이미지" />
       </figure>
 
       <span class="badge">PREMIUM SUMMER DENIM</span>
@@ -241,14 +288,14 @@
       <p class="sub">한여름에도 가볍고 세련된 실루엣을 완성하는 프리미엄 데님.</p>
 
       <figure class="main-image">
-        <img src="https://images.unsplash.com/photo-1475180098004-ca77a66827be?auto=format&fit=crop&w=1000&q=80" alt="여성 청바지 전신 코디 이미지" />
+        <img src="https://images.unsplash.com/photo-1464863979621-258859e62245?auto=format&fit=crop&w=1200&q=80" alt="긴 생머리 여성 모델의 프리미엄 스트릿 데님 코디 이미지" />
       </figure>
 
       <div class="thumb-grid">
-        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=500&q=80" alt="여성 청바지 착용 이미지 1" />
-        <img src="https://images.unsplash.com/photo-1543087903-1ac2ec7aa8f9?auto=format&fit=crop&w=500&q=80" alt="여성 청바지 착용 이미지 2" />
-        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=500&q=80" alt="여성 청바지 스타일 이미지 3" />
-        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=500&q=80" alt="여성 청바지 디테일 이미지 4" />
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=80" alt="연청 와이드 데님 팬츠 착용 전신 스타일 이미지 1" />
+        <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=700&q=80" alt="화이트 스니커즈와 와이드 데님 매치 스타일 이미지 2" />
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=700&q=80" alt="도시적인 무드의 여성 데님 룩 이미지 3" />
+        <img src="https://images.unsplash.com/photo-1495385794356-15371f348c31?auto=format&fit=crop&w=700&q=80" alt="블랙 헬멧 소품과 함께한 바이커 감성 데님 스타일 이미지 4" />
       </div>
     </section>
 
@@ -322,7 +369,7 @@
   </main>
 
   <script>
-    const heroImage = "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1400&q=80";
+    const heroImage = "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=80";
     document.getElementById("heroImage").src = heroImage;
   </script>
 </body>
