@@ -14,9 +14,9 @@
       --navy: #102a56;
       --light-denim: #d8e9ff;
       --line: #dbe6f5;
-      --shadow: 0 22px 46px rgba(16, 42, 86, 0.17);
-      --page-max: 520px;
-      --page-padding: 18px;
+      --shadow: 0 28px 62px rgba(16, 42, 86, 0.14);
+      --page-max: 640px;
+      --page-padding: 24px;
     }
 
     * { box-sizing: border-box; }
@@ -25,7 +25,7 @@
       margin: 0;
       font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
       color: var(--text);
-      line-height: 1.55;
+      line-height: 1.6;
       background:
         radial-gradient(circle at 12% -8%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 35%),
         radial-gradient(circle at 88% 10%, rgba(186, 215, 255, 0.5) 0%, rgba(186, 215, 255, 0) 30%),
@@ -44,7 +44,7 @@
     }
 
     .page-head {
-      padding: 28px 22px;
+      padding: 40px 34px;
       border-bottom: 1px solid var(--line);
       background: linear-gradient(160deg, #edf4ff 0%, #ffffff 55%, #eff6ff 100%);
     }
@@ -53,7 +53,7 @@
       display: inline-block;
       padding: 6px 12px;
       border-radius: 999px;
-      font-size: 11px;
+      font-size: 13px;
       letter-spacing: 0.8px;
       font-weight: 700;
       background: var(--navy);
@@ -63,30 +63,31 @@
 
     h1 {
       margin: 0;
-      font-size: 28px;
+      font-size: 38px;
       line-height: 1.35;
-      letter-spacing: -0.35px;
+      letter-spacing: -0.6px;
+      font-weight: 900;
     }
 
     .intro {
-      margin: 9px 0 0;
+      margin: 12px 0 0;
       color: var(--muted);
-      font-size: 16px;
+      font-size: 19px;
     }
 
     .deck {
-      padding: 24px 18px 28px;
+      padding: 40px 30px 48px;
       display: grid;
-      gap: 20px;
-      background: #f6f9ff;
+      gap: 34px;
+      background: linear-gradient(180deg, #f7faff 0%, #f3f7ff 45%, #f8fbff 100%);
     }
 
     .slide-card {
       background: #fff;
       border: 1px solid var(--line);
-      border-radius: 18px;
+      border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 12px 28px rgba(16, 42, 86, 0.08);
+      box-shadow: 0 16px 36px rgba(16, 42, 86, 0.09);
     }
 
     .slide-meta {
@@ -94,14 +95,14 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      padding: 14px 16px;
+      padding: 18px 22px;
       border-bottom: 1px solid var(--line);
       background: #f8fbff;
     }
 
     .slide-no {
-      font-size: 12px;
-      font-weight: 800;
+      font-size: 13px;
+      font-weight: 900;
       color: var(--navy);
       background: var(--light-denim);
       border: 1px solid #c9defb;
@@ -112,8 +113,8 @@
 
     .slide-title {
       margin: 0;
-      font-size: 18px;
-      font-weight: 800;
+      font-size: 24px;
+      font-weight: 900;
       color: var(--text);
       text-align: right;
       letter-spacing: -0.2px;
@@ -122,13 +123,13 @@
     .image-slot {
       margin: 0;
       aspect-ratio: 4 / 5;
-      min-height: 460px;
+      min-height: 620px;
       display: grid;
       place-items: center;
       padding: 16px;
       text-align: center;
       color: #1c3f82;
-      font-size: 17px;
+      font-size: 19px;
       font-weight: 700;
       background:
         linear-gradient(145deg, #f4f8ff 0%, #e5f0ff 100%);
@@ -164,14 +165,14 @@
     }
 
     .copy-slot {
-      padding: 18px 16px 20px;
+      padding: 24px 22px 28px;
       background: #fff;
     }
 
     .copy-label {
       display: inline-block;
       margin-bottom: 6px;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--muted);
       letter-spacing: 0.5px;
@@ -179,16 +180,16 @@
 
     .copy-subtitle {
       margin: 0 0 8px;
-      font-size: 18px;
+      font-size: 28px;
       line-height: 1.35;
-      letter-spacing: -0.25px;
+      letter-spacing: -0.45px;
       color: #0b1e46;
-      font-weight: 800;
+      font-weight: 900;
     }
 
     .copy-text {
       margin: 0;
-      font-size: 15px;
+      font-size: 17px;
       color: #334155;
     }
 
@@ -224,37 +225,69 @@
       color: #fff;
     }
 
+    
+
+    .slide-card:nth-child(3n + 1) .copy-subtitle {
+      font-family: "Pretendard", "Noto Serif KR", serif;
+      letter-spacing: -0.4px;
+    }
+
+    .slide-card:nth-child(3n + 2) .copy-subtitle {
+      text-transform: uppercase;
+      font-size: 25px;
+      letter-spacing: 0.3px;
+    }
+
+    .slide-card:nth-child(3n) .copy-subtitle {
+      font-size: 27px;
+      font-style: italic;
+      font-weight: 800;
+      color: #142f61;
+    }
+
+    .slide-card:nth-child(odd) .image-slot {
+      background: linear-gradient(155deg, #f6f9ff 0%, #e2ecfb 100%);
+    }
+
+    .slide-card:nth-child(even) .image-slot {
+      background: linear-gradient(155deg, #f3f8ff 0%, #dceaff 100%);
+    }
+
     @media (max-width: 767px) {
       body { padding: 0; }
       .page { width: 100%; border-radius: 0; min-height: 100vh; }
-      .page-head { padding: 24px 18px; }
-      h1 { font-size: 27px; }
-      .intro { font-size: 15px; }
-      .deck { padding: 20px 16px 26px; gap: 16px; }
-      .slide-title { font-size: 17px; }
-      .image-slot { min-height: 420px; }
+      .page-head { padding: 30px 20px; }
+      h1 { font-size: 32px; }
+      .intro { font-size: 17px; }
+      .deck { padding: 28px 16px 36px; gap: 26px; }
+      .slide-meta { padding: 16px 16px; }
+      .slide-title { font-size: 21px; }
+      .copy-subtitle { font-size: 24px; }
+      .copy-text { font-size: 16px; }
+      .image-slot { min-height: 480px; }
+      .cta-actions { grid-template-columns: 1fr; }
     }
 
     @media (min-width: 768px) and (max-width: 1199px) {
       :root {
-        --page-max: 820px;
+        --page-max: 980px;
         --page-padding: 32px;
       }
 
-      .page-head { padding: 34px 32px; }
-      h1 { font-size: 34px; }
-      .intro { font-size: 17px; }
-      .deck { padding: 28px; gap: 20px; }
+      .page-head { padding: 46px 40px; }
+      h1 { font-size: 46px; }
+      .intro { font-size: 19px; }
+      .deck { padding: 42px 34px 52px; gap: 30px; }
       .slide-meta { padding: 14px 18px; }
-      .slide-title { font-size: 19px; }
-      .copy-subtitle { font-size: 20px; }
-      .copy-text { font-size: 16px; }
-      .image-slot { min-height: 500px; }
+      .slide-title { font-size: 24px; }
+      .copy-subtitle { font-size: 29px; }
+      .copy-text { font-size: 18px; }
+      .image-slot { min-height: 640px; }
     }
 
     @media (min-width: 1200px) {
       :root {
-        --page-max: 1180px;
+        --page-max: 1320px;
         --page-padding: 56px;
       }
 
@@ -266,18 +299,18 @@
       }
 
       .page { border-radius: 32px; }
-      .page-head { padding: 42px 44px 34px; }
-      h1 { font-size: 40px; }
-      .intro { font-size: 18px; max-width: 820px; }
+      .page-head { padding: 56px 64px 42px; }
+      h1 { font-size: 54px; }
+      .intro { font-size: 20px; max-width: 920px; }
       .deck {
-        padding: 34px;
-        gap: 20px;
+        padding: 52px;
+        gap: 34px;
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-      .slide-title { font-size: 20px; }
-      .copy-subtitle { font-size: 21px; }
-      .copy-text { font-size: 17px; }
-      .image-slot { min-height: 560px; }
+      .slide-title { font-size: 26px; }
+      .copy-subtitle { font-size: 31px; }
+      .copy-text { font-size: 19px; }
+      .image-slot { min-height: 700px; }
     }
   </style>
 </head>
